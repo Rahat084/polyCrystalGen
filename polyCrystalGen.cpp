@@ -17,7 +17,7 @@ const int n_x=3,n_y=3,n_z=3;
 
 int main() {
          container_poly conp(x_min,x_max,y_min,y_max,z_min,z_max,n_x,n_y,n_z,false,false,false,8);
-         conp.import("pack_six_cube_poly");
+         conp.import("../data/pack_six_cube_poly");
          vorogmsh gmsh(conp);
          gmsh.saveasgeo("pack_six_cube_poly.geo");
          gmsh.saveasgeo("pack_six_cube_poly_01.geo",0.1);

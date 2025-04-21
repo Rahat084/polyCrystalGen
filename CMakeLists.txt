@@ -6,7 +6,7 @@ add_executable( polyCrystalGen polyCrystalGen.cpp )
 
 # polyCrystalGen: Linking an external dynamic library
 find_library(VORO_LIB Voro++
-    HINTS /Users/mhasan/miniconda3/lib/ # Optional hint
+    HINTS "${CONDA_PREFIX}/lib/" # Optional hint
 )
 
 
