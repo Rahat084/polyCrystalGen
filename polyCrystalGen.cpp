@@ -26,6 +26,7 @@ int main() {
 	infile.getline( parameters, 256);
 	std::cout << parameters << std::endl;
 	infile >> x_min >> x_max >> y_min >> y_max >> z_min >> z_max >> n_x >> n_y >> n_z;
+	std::cout << "   " << x_min << "     " << x_max  << "      "<< y_min << "      " << y_max << "      " << z_min << "      " << z_max << "      " << n_x << "    " << n_y << "    " << n_z <<std::endl;
 
 	voro::container_poly conp(x_min,x_max,y_min,y_max,z_min,z_max,n_x,n_y,n_z,false,false,false,8);
         conp.import("../input/pack_six_cube_poly");
