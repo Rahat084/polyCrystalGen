@@ -1,0 +1,2 @@
+x_min  x_max  y_min  y_max  z_min  z_max  n_x  n_y  n_z  
+0       10       0      10      0      10     3     3   3  

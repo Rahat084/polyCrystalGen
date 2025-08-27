@@ -4,3 +4,5 @@
 	* conda install conda-forge::voro++
     * GMSH
 	* conda install conda-forge::gmsh
+* Input File 
+    * ID x_cord y_cord z_cord radius

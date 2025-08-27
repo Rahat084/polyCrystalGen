@@ -29,8 +29,8 @@ int main() {
 	std::cout << "   " << x_min << "     " << x_max  << "      "<< y_min << "      " << y_max << "      " << z_min << "      " << z_max << "      " << n_x << "    " << n_y << "    " << n_z <<std::endl;
 
 	voro::container_poly conp(x_min,x_max,y_min,y_max,z_min,z_max,n_x,n_y,n_z,false,false,false,8);
-        conp.import("../input/pack_six_cube_poly");
+        conp.import("../input/polycrystal");
         vorogmsh gmsh(conp);
-        gmsh.saveasgeo("pack_six_cube_poly.geo");
-        gmsh.saveasgeo("pack_six_cube_poly_01.geo",0.1);
+        gmsh.saveasgeo("polycrystal.geo");
+        gmsh.saveasgeo("polycrystal_01.geo",0.1);
 }
