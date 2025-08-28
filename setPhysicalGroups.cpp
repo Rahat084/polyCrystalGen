@@ -1,6 +1,7 @@
 #include <cmath>
 #include <gmsh.h>
 #include <iostream>
+#include <fstream>
 
 /* Author : Md Shahrier Hasan, UCLA
  * GMSH script to creat physical group in polycrystal external and grain boundaries
@@ -50,9 +51,20 @@ const unsigned int top_pg_tag = gmsh::model::addPhysicalGroup( 2, top_tags, -1, 
 const unsigned int bottom_pg_tag = gmsh::model::addPhysicalGroup( 2, bottom_tags, -1, "bottom");
 const unsigned int gb_pg_tag = gmsh::model::addPhysicalGroup( 2, gb_tags, -1, "grain_boundary");
 gmsh::model::geo::synchronize();
-//gmsh::model::occ::removeAllDuplicates();
+gmsh::model::geo::removeAllDuplicates();
 std::cout << "Physical Groups Added" << std::endl;
 gmsh::write("output_file.geo_unrolled");
+
+std::ofstream outfile("output_file.geo_unrolled", std::ios::app);
+
+if (outfile.is_open()) {
+        // File opened successfully
+    } else {
+        std::cerr << "Unable to open file for appending." << std::endl;
+    }
+outfile << "Coherence;" << std::endl;
+outfile.close();
+
 return 0;
 }
 
